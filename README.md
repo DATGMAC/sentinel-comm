@@ -8,6 +8,12 @@ lock-free ring buffer. Dispatching GPU work becomes a 64-byte write —
 **0.5 µs to enqueue, ~96 ns GPU-side dispatch, no `cudaLaunchKernel`, no
 driver round-trip**.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/img/bench-dark.png">
+  <img alt="Benchmark: sentinel-comm sustains 0.63 µs per tiny op vs 2.09 µs for CUDA graph replays and 2.53 µs for plain kernel launches; one-shot round-trips are honestly slower at 11.63 µs p50."
+       src="docs/img/bench-light.png">
+</picture>
+
 ```
 measured on RTX 5060 Ti (Blackwell), benchmarks/bench_dispatch.cu:
 
