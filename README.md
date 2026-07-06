@@ -1,10 +1,12 @@
-# Sentinel Comm — Persistent-Kernel CPU→GPU Command Bus
+# sentinel-comm
 
-A **drop-in communication layer between CPU and GPU** for C++ engine builders.
-One persistent CUDA kernel launches at boot and never exits; the host talks to
-it through a lock-free ring buffer in pinned memory. Dispatching GPU work
-becomes a 64-byte write — **no `cudaLaunchKernel`, no driver round-trip, no
-launch latency**.
+**Stop launching kernels. Start sending commands.**
+
+A persistent-kernel CPU→GPU command bus for C++ engine builders: one CUDA
+kernel launches at boot and never exits; the host talks to it through a
+lock-free ring buffer. Dispatching GPU work becomes a 64-byte write —
+**0.5 µs to enqueue, ~96 ns GPU-side dispatch, no `cudaLaunchKernel`, no
+driver round-trip**.
 
 ```
 measured on RTX 5060 Ti (Blackwell), benchmarks/bench_dispatch.cu:
@@ -22,6 +24,10 @@ measured on RTX 5060 Ti (Blackwell), benchmarks/bench_dispatch.cu:
 Extracted from PROJECT DATGMAC's Sentinel architecture; stripped of everything
 inference-specific. Two source files, one header, zero dependencies beyond the
 CUDA runtime.
+
+📖 **Read first if you run other CUDA libraries in-process:**
+[Why your persistent kernel deadlocks llama.cpp](docs/why-your-persistent-kernel-deadlocks.md)
+— the empirically-bisected failure mode nobody writes down.
 
 ## Who this is for
 
