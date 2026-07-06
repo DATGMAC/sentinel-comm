@@ -86,10 +86,11 @@ ping-pong.*
 
 ## Before pushing publicly — 10-minute checklist
 
-- [ ] `git remote add origin git@github.com:<you>/sentinel-comm.git && git push -u origin main`
-- [ ] Set description + topics (above)
-- [ ] Run `./bench_dispatch` on the target machine and paste YOUR numbers
+- [x] Published: https://github.com/DATGMAC/sentinel-comm
+- [x] Set description + topics (above)
+- [x] Run `./bench_dispatch` on the target machine and paste YOUR numbers
       into the README table (numbers must match what a cloner will see)
-- [ ] Enable Issues; add a "good first issue": multi-ring / multi-GPU support
+- [x] Enable Issues; add a "good first issue": multi-ring / multi-GPU support (#1)
+- [ ] Upload docs/img/banner.png at Settings → Social preview (web UI only)
 - [ ] Pin the war-story doc in the README top ("Read: why your persistent
       kernel deadlocks →")
