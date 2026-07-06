@@ -13,6 +13,11 @@ One-sentence expansion:
 > A persistent-kernel CPU→GPU command bus — 0.5 µs enqueue, 96 ns dispatch,
 > no `cudaLaunchKernel`.
 
+Second-line slogan (the honest-tradeoff hook — use near the benchmark chart
+and in replies to "why not just launch+sync?"):
+
+> **Loses the ping (11.6 µs). Wins the flood (0.63 µs/op).**
+
 ## GitHub repo settings
 
 **Description** (the ~120 chars shown in search results and link previews):

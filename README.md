@@ -67,6 +67,8 @@ request→response round-trips** (submit one command, block on its fence, ~10–
 dominate there. If your pattern is strictly ping-pong with the host idle in
 between, a stream is fine and simpler.
 
+**Loses the ping (11.6 µs). Wins the flood (0.63 µs/op).**
+
 ## Architecture
 
 ```
